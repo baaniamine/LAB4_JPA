@@ -6,6 +6,11 @@
 
 ## 📽️ Demo
 
+
+[![Watch the demo](https://img.youtube.com/vi/EpewlCvdhH4/maxresdefault.jpg)](https://youtu.be/EpewlCvdhH4)
+
+
+
 ---
 
 ## 📖 About The Project
@@ -25,76 +30,7 @@ It covers all three JPA inheritance strategies (`SINGLE_TABLE`, `JOINED`, `TABLE
 | `TABLE_PER_CLASS` | `Produit` | `Livre`, `Electronique` |
 
 ### Entity Relationship Diagram
-
-```mermaid
-classDiagram
-    direction TB
-
-    class Vehicule {
-        +Long id
-        +String marque
-        +String modele
-        +LocalDate anneeFabrication
-        +Double prix
-    }
-    class Voiture {
-        +Integer nombrePortes
-        +Boolean climatisation
-        +String typeCarburant
-    }
-    class Moto {
-        +Integer cylindree
-        +String typeTransmission
-    }
-
-    class Employe {
-        +Long id
-        +String nom
-        +String prenom
-        +String email
-        +LocalDate dateEmbauche
-    }
-    class Developpeur {
-        +String langage
-        +String specialite
-        +Integer anneeExperience
-    }
-    class Manager {
-        +String service
-        +Integer nombreSubordonnes
-        +Double bonus
-    }
-
-    class Produit {
-        +Long id
-        +String nom
-        +Double prix
-        +String description
-        +LocalDateTime dateCreation
-    }
-    class Livre {
-        +String auteur
-        +String isbn
-        +Integer nombrePages
-        +String editeur
-    }
-    class Electronique {
-        +String marque
-        +String modele
-        +Integer garantieMois
-        +String caracteristiques
-    }
-
-    Vehicule <|-- Voiture
-    Vehicule <|-- Moto
-    Employe <|-- Developpeur
-    Employe <|-- Manager
-    Produit <|-- Livre
-    Produit <|-- Electronique
-```
-
----
-
+## Coming Soon.
 ## 🔗 Inheritance Strategies Covered
 
 ### `SINGLE_TABLE` — Vehicule, Voiture, Moto
@@ -193,14 +129,4 @@ src/
 
 ---
 
-## 📊 Strategy Comparison
 
-| Feature | `SINGLE_TABLE` | `JOINED` | `TABLE_PER_CLASS` |
-|---|---|---|---|
-| Tables created | 1 | 1 per class | 1 per concrete class |
-| Polymorphic query | Fast (no JOIN) | Slower (JOINs) | Slowest (UNION) |
-| Nullable columns | Many | None | None |
-| Normalization | Poor | Good | Moderate |
-| `NOT NULL` on subclass fields | ❌ | ✅ | ✅ |
-
----
