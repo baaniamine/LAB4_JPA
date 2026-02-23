@@ -6,9 +6,6 @@
 
 ## 📽️ Demo
 
-<!-- TODO: Add demo video/gif here -->
-> 🎬 Video demo coming soon...
-
 ---
 
 ## 📖 About The Project
@@ -155,20 +152,7 @@ Creates `Livre` and `Electronique` instances, persists them, then runs polymorph
 - Java 11 or higher
 - Maven 3.x
 
-### Run the project
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/jpa-inheritance-strategies.git
-cd jpa-inheritance-strategies
-
-# Build and run
-mvn compile exec:java -Dexec.mainClass="com.example.App"
-```
-
-The H2 database is *in-memory* — no setup needed. Tables are created and dropped automatically on each run (`hbm2ddl.auto=create-drop`).
-
----
 
 ## 📁 Project Structure
 
@@ -220,7 +204,3 @@ src/
 | `NOT NULL` on subclass fields | ❌ | ✅ | ✅ |
 
 ---
-
-## 📄 License
-
-This project is for educational purposes. Feel free to use it as a reference or starting point.
