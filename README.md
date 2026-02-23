@@ -34,23 +34,19 @@ It covers all three JPA inheritance strategies (`SINGLE_TABLE`, `JOINED`, `TABLE
 ## 🔗 Inheritance Strategies Covered
 
 ### `SINGLE_TABLE` — Vehicule, Voiture, Moto
-- All classes are stored in a **single table** (`vehicules`)
-- A discriminator column (`type_vehicule`) identifies the concrete type: `"VOITURE"` or `"MOTO"`
-- Subclass-specific columns are **nullable** for rows of other types
-- Best for: shallow hierarchies with frequent polymorphic queries
+- One table for all classes, with a discriminator column (`type_vehicule`)
+- Subclass-specific columns are nullable
+- Best for: simple hierarchies with frequent polymorphic queries
 
 ### `JOINED` — Employe, Developpeur, Manager
-- Each class has its **own table**; subclass tables share the parent's PK via a foreign key
-- Polymorphic queries require **JOINs** across tables
-- Fully normalized — subclass-specific columns can have `NOT NULL` constraints
-- Best for: deep hierarchies where data integrity and normalization matter
+- Each class has its own table, joined via foreign key
+- Fully normalized, supports `NOT NULL` on subclass fields
+- Best for: hierarchies where data integrity matters
 
 ### `TABLE_PER_CLASS` — Produit, Livre, Electronique
-- Each **concrete class** gets its own complete, independent table
-- No shared table — all inherited columns are duplicated in each subclass table
-- Polymorphic queries use a **UNION** across tables
-- Best for: hierarchies where subclasses are queried independently
-
+- Each concrete class gets its own full, independent table
+- Polymorphic queries use `UNION`
+- Best for: subclasses queried independently
 ---
 
 ## ✅ Test Scenarios (App.java)
